@@ -209,10 +209,14 @@ header{
 
   padding: 5px;
   top: 50%;
-  transform: translate(50%, -80%);
+  transform: translate(50%, -30%);
   width: 50%;
 
-}
 
+
+}
+.formContainer{
+  display: inline-block;
+}
 
 /*# sourceMappingURL=/global.e50bbfba.css.map */
