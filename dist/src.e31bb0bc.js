@@ -17099,7 +17099,7 @@ __exportStar(require("./browser-connect"), exports);
 require("error-polyfill");
 
 },{"./key_stores/browser-index":"../node_modules/near-api-js/lib/key_stores/browser-index.js","./common-index":"../node_modules/near-api-js/lib/common-index.js","./browser-connect":"../node_modules/near-api-js/lib/browser-connect.js","error-polyfill":"../node_modules/error-polyfill/index.js"}],"config.js":[function(require,module,exports) {
-var CONTRACT_NAME = "dev-1632891883889-9323740" || 'test-project';
+var CONTRACT_NAME = "dev-1632923910120-5526929" || 'test-project';
 
 function getConfig(env) {
   switch (env) {
@@ -17139,7 +17139,7 @@ function getConfig(env) {
       return {
         networkId: 'local',
         nodeUrl: 'http://localhost:3030',
-        keyPath: "".concat("C:\\Users\\ricar", "/.near/validator_key.json"),
+        keyPath: "".concat("C:\\Users\\cpsistem01", "/.near/validator_key.json"),
         walletUrl: 'http://localhost:4000/wallet',
         contractName: CONTRACT_NAME
       };
@@ -17437,7 +17437,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50392" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51679" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

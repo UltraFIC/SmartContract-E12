@@ -22,6 +22,7 @@ html {
 body {
   margin: 0;
   padding: 1em;
+  font-family:"Lato",sans-serif;
 }
 
 main {
@@ -30,13 +31,14 @@ main {
 }
 
 h1 {
-  background-image: url(assets/logo-black.svg);
+  /*background-image: url(assets/logo-black.svg);*/
   background-position: center 1em;
   background-repeat: no-repeat;
   background-size: auto 1.5em;
   margin-top: 0;
   padding: 3.5em 0 0.5em;
   text-align: center;
+  color: white;
 }
 
 a,
@@ -187,7 +189,27 @@ aside footer *:last-child {
   }
 }
 
+header{
+    /*95vh deja el 5% sobrante de la altura de la imagen*/
+    height: 95vh;
+    background-image: linear-gradient(to right bottom,
+    rgba(167, 8, 8, 0.8),
+    rgba(233, 233, 233, 0.8)),
+    url(./assets/contractBackground.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+
+    /*Deformar img*/
+    /*(x y, x y, x y)*/
+    clip-path: polygon(0 0, 100% 0, 100% 200px, 0 70%);
+  
+}
 .formPrincipal{
-  text-align: center;
+
   padding: 5px;
+  top: 50%;
+  transform: translate(50%, -80%);
+  width: 50%;
+
 }
