@@ -25,18 +25,7 @@
   </div>
   <div class="formPrincipal">
     <form>
-      <div class="form-group row">
-        <label>Selecciona un activo</label>
-        <div class="col-sm-10">
-        <select class="form-control" id="selectActivo">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-      </div>
-      </div>
+      
 
       <div class="form-group row">
         <label class="col-sm-2">Consignar</label>
@@ -76,18 +65,26 @@
 
       <h4>Clausulas</h4>
       <div class="form-group row">
-        <label class="col-sm-2">Venta Promedio Días</label>
+        <label class="col-sm-2">Venta Promedio</label>
         <div class="col-sm-10">
-        <input type="text" class="form-control" id="venda_prom" placeholder="Venta promedio días">
+        <input type="text" class="form-control" id="venda_prom" placeholder="Venta promedio">
         </div>
       </div>
 
       <div class="form-group row">
         <label class="col-sm-2">Tiempo</label>
-        <div class="col-sm-10">
+        <div class="col-sm-6">
         <input type="text" class="form-control" id="tiempo" placeholder="Tiempo">
         </div>
+        <div class="col-sm-4">
+          <select class="form-control" id="selectTiempo">
+            <option>Días</option>
+            <option>Semanas</option>
+            <option>Meses</option>
+          </select>
+        </div>
       </div>
+
 
       <div class="form-group row">
         <label class="col-sm-2">Venta cliente</label>
@@ -97,36 +94,66 @@
       </div>
 
       <div class="form-group row">
-        <label class="col-sm-2">Venta cliente</label>
-        <div class="col-sm-10">
-        <input type="text" class="form-control" id="venta_cliente" placeholder="Ventas">
+        <label class="col-sm-3">Penalización</label>
+        <div class="col-sm-9">
+        <input type="text" class="form-control" id="penalizacion" placeholder="-$">
         </div>
       </div>
-
       
+      <h4>Checklist</h4>
+
       <div class="form-group row">
-        <label class="col-sm-6">Productos sin mezclar</label>
-        <div class="col-md-6">
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="penTxt" placeholder="Condición">
+          </div>
+        <div class="col-md-2">
           <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios1" value="option2">
         </div>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="pen1" placeholder="NEAR">
+          </div>
       </div>
 
       <div class="form-group row">
-        <label class="col-sm-6">Solo productos de la empresa</label>
-        <div class="col-md-6">
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="penTxt2" placeholder="Condición">
+          </div>
+        <div class="col-md-2">
           <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios2" value="option2">
         </div>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="pen2" placeholder="NEAR">
+          </div>
       </div>
 
       <div class="form-group row">
-        <label class="col-sm-6">Venta alcanzada</label>
-        <div class="col-md-6">
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="penTxt3" placeholder="Condición">
+          </div>
+        <div class="col-md-2">
           <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios3" value="option2">
         </div>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="pen3" placeholder="NEAR">
+          </div>
       </div>
 
+      <h4>Total</h4>
+
+      <div class="form-group row">
+        <label class="col-sm-7">Total penalización</label>
+        <div class="col-sm-5">
+        <input type="text" class="form-control" id="penalizacion_tot" placeholder="Total">
+        </div>
+      </div>
     
       
+      <div class="form-group row">
+        <label class="col-sm-7">Abono</label>
+        <div class="col-sm-5">
+        <input type="text" class="form-control" id="abonar_tot" placeholder="Total">
+        </div>
+      </div>
       <button type="submit" class="btn btn-success">Enviar</button>
       
     </form>
