@@ -17099,7 +17099,7 @@ __exportStar(require("./browser-connect"), exports);
 require("error-polyfill");
 
 },{"./key_stores/browser-index":"../node_modules/near-api-js/lib/key_stores/browser-index.js","./common-index":"../node_modules/near-api-js/lib/common-index.js","./browser-connect":"../node_modules/near-api-js/lib/browser-connect.js","error-polyfill":"../node_modules/error-polyfill/index.js"}],"config.js":[function(require,module,exports) {
-var CONTRACT_NAME = "dev-1632887167349-1814240" || 'test-project';
+var CONTRACT_NAME = "dev-1632891883889-9323740" || 'SmartContract-Consigna-Equipo';
 
 function getConfig(env) {
   switch (env) {
@@ -17139,7 +17139,7 @@ function getConfig(env) {
       return {
         networkId: 'local',
         nodeUrl: 'http://localhost:3030',
-        keyPath: "".concat("C:\\Users\\jorge", "/.near/validator_key.json"),
+        keyPath: "".concat("C:\\Users\\ricar", "/.near/validator_key.json"),
         walletUrl: 'http://localhost:4000/wallet',
         contractName: CONTRACT_NAME
       };
@@ -17176,6 +17176,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.initContract = initContract;
 exports.logout = logout;
 exports.login = login;
+exports.loginEmp = loginEmp;
 
 var _nearApiJs = require("near-api-js");
 
@@ -17187,7 +17188,8 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-var nearConfig = (0, _config.default)("development" || 'development'); // Initialize contract & set global variables
+var nearConfig = (0, _config.default)("development" || 'development');
+var nearConfigEmp = (0, _config.default)("development" || 'betanet'); // Initialize contract & set global variables
 
 function initContract() {
   return _initContract.apply(this, arguments);
@@ -17195,7 +17197,7 @@ function initContract() {
 
 function _initContract() {
   _initContract = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-    var near;
+    var near, nearEmp;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -17209,13 +17211,23 @@ function _initContract() {
 
           case 2:
             near = _context.sent;
+            _context.next = 5;
+            return (0, _nearApiJs.connect)(Object.assign({
+              deps: {
+                keyStore: new _nearApiJs.keyStores.BrowserLocalStorageKeyStore()
+              }
+            }, nearConfigEmp));
+
+          case 5:
+            nearEmp = _context.sent;
             // Initializing Wallet based Account. It can work with NEAR testnet wallet that
             // is hosted at https://wallet.testnet.near.org
-            window.walletConnection = new _nearApiJs.WalletConnection(near); // Getting the Account ID. If still unauthorized, it's just empty string
+            window.walletConnection = new _nearApiJs.WalletConnection(near);
+            window.walletConnection = new _nearApiJs.WalletConnection(nearEmp); // Getting the Account ID. If still unauthorized, it's just empty string
 
             window.accountId = window.walletConnection.getAccountId(); // Initializing our contract APIs by contract name and configuration
 
-            _context.next = 7;
+            _context.next = 11;
             return new _nearApiJs.Contract(window.walletConnection.account(), nearConfig.contractName, {
               // View methods are read only. They don't modify the state, but usually return some value.
               viewMethods: ['getGreeting'],
@@ -17223,10 +17235,20 @@ function _initContract() {
               changeMethods: ['setGreeting']
             });
 
-          case 7:
+          case 11:
+            window.contract = _context.sent;
+            _context.next = 14;
+            return new _nearApiJs.Contract(window.walletConnection.account(), nearConfigEmp.contractName, {
+              // View methods are read only. They don't modify the state, but usually return some value.
+              viewMethods: ['getGreeting'],
+              // Change methods can modify the state. But you don't receive the returned value when called.
+              changeMethods: ['setGreeting']
+            });
+
+          case 14:
             window.contract = _context.sent;
 
-          case 8:
+          case 15:
           case "end":
             return _context.stop();
         }
@@ -17248,6 +17270,14 @@ function login() {
   // This works by creating a new access key for the user's account and storing
   // the private key in localStorage.
   window.walletConnection.requestSignIn(nearConfig.contractName);
+}
+
+function loginEmp() {
+  // Allow the current app to make calls to the specified contract on the
+  // user's behalf.
+  // This works by creating a new access key for the user's account and storing
+  // the private key in localStorage.
+  window.walletConnection.requestSignIn(nearConfigEmp.contractName);
 }
 },{"near-api-js":"../node_modules/near-api-js/lib/browser-index.js","./config":"config.js"}],"index.js":[function(require,module,exports) {
 "use strict";
@@ -17345,6 +17375,7 @@ document.querySelector('input#greeting').oninput = function (event) {
 };
 
 document.querySelector('#sign-in-button').onclick = _utils.login;
+document.querySelector('#sign-in-button-emp').onclick = _utils.loginEmp;
 document.querySelector('#sign-out-button').onclick = _utils.logout; // Display the signed-out-flow container
 
 function signedOutFlow() {
@@ -17437,7 +17468,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49733" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54274" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

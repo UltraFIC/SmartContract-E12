@@ -1,6 +1,6 @@
 import 'regenerator-runtime/runtime'
 
-import { initContract, login, logout } from './utils'
+import { initContract, login, loginEmp, logout } from './utils'
 
 import getConfig from './config'
 const { networkId } = getConfig(process.env.NODE_ENV || 'development')
@@ -62,6 +62,7 @@ document.querySelector('input#greeting').oninput = (event) => {
 }
 
 document.querySelector('#sign-in-button').onclick = login
+document.querySelector('#sign-in-button-emp').onclick = loginEmp
 document.querySelector('#sign-out-button').onclick = logout
 
 // Display the signed-out-flow container
