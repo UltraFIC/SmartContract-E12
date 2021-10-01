@@ -31,3 +31,14 @@ code .
 
 Dentro de Visual Code, abrir la terminal: 
 
+![Screenshot](SmartContractE12_Code.png)
+
+
+Instalar con el siguiente comando:
+npm install -g near-cli
+
+Ejecutar con el comando:
+npm start
+
+Hecho esto, se mostrará la pantalla inicial del SmartContract.
+
