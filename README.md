@@ -14,7 +14,7 @@ Creación de contratos inteligentes para la validación o gestión de activos a 
 6. Tarifas de incumplimiento por condición.
 7. Beneficios para el cliente si cumple con las condiciones, estímulos en crypto monedas para el pago de servicios.
 
-## Como ejecutar
+## Como instalar y ejecutar
 Clonar Repositorio desde Windows con Git Bash:
 
 La forma mas facil es crear una carpeta con nombre del Repo y abrir Git Bash con clic derecho dentro de la carpeta, opción Git Bash Here:
