@@ -17439,7 +17439,46 @@ function _fetchGreeting() {
 
 window.nearInitPromise = (0, _utils.initContract)().then(function () {
   if (window.walletConnection.isSignedIn()) signedInFlow();else signedOutFlow();
-}).catch(console.error);
+}).catch(console.error); // ***********************************************
+// const checkCredentials = require('./utils/check-credentials');
+// const connect = require('./utils/connect');
+// const inspectResponse = require('./utils/inspect-response');
+// const checkCredentials = require('./utils/check-credentials');
+// exports.sendMoney = async function (options) {
+//   await checkCredentials(options.sender, options.networkId, options.keyStore);
+//   console.log(`Sending ${options.amount} NEAR to ${options.receiver} from ${options.sender}`);
+//   const near = await connect(options);
+//   const account = await near.account(options.sender);
+//   const result = await account.sendMoney(options.receiver, utils.format.parseNearAmount(options.amount));
+//   inspectResponse.prettyPrintResponse(result, options);
+// };
+// const options = {
+//   sender: "sender.testnet",
+//   networkId: "testnet",
+//   keyStore: "keyStore",
+//   receiver: "receiver.testnet",
+//   amount: "1.5"
+// }
+// console.log(sendMoney(options));
+// // Integrate the payment gateway in line 20 to start accepting payments in NEAR.
+// // Make sure you do not add extra spaces for code validation purposes.
+// const nearAPI = require("near-api-js");
+// const { connect, utils } = nearAPI;
+// const { config } = require('./config'); // loads config settings
+// // configure accounts, network, and amount of NEAR to send
+// const sender = "sender.testnet";
+// const receiver = "receiver.testnet";
+// const networkId = "testnet";
+// const amount = utils.format.parseNearAmount("1.5");
+// async function main() {
+//   // connect to NEAR! :)
+//   const near = await connect(config);
+//   // create a NEAR account object
+//   const sender = await near.account(sender);
+//   // TODO send those tokens here
+//   const result =
+//     console.log("Transaction Results: ", result.transaction);
+// }
 },{"regenerator-runtime/runtime":"../node_modules/regenerator-runtime/runtime.js","./utils":"utils.js","./config":"config.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -17468,7 +17507,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54274" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62369" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
