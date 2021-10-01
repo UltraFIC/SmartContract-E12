@@ -40,5 +40,7 @@ npm install -g near-cli
 Ejecutar con el comando:
 npm start
 
-Hecho esto, se mostrará la pantalla inicial del SmartContract.
+Y Listo. Hecho esto, se mostrará la pantalla inicial del SmartContract:
+
+![Screenshot](InicioEquipo12.png)
 
