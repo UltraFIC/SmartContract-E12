@@ -2,6 +2,7 @@
 import 'regenerator-runtime/runtime';
 import { initContract, login, loginEmp, logout } from './utils';
 import getConfig from './config';
+import { trySendMoney } from './trySendMoney';
 
 const { networkId } = getConfig(process.env.NODE_ENV || 'development');
 
@@ -113,31 +114,61 @@ window.nearInitPromise = initContract()
   })
   .catch(console.error)
 
+// const options = {
+//   sender: "sender.testnet",
+//   networkId: "testnet",
+//   keyStore: "keyStore",
+//   receiver: "receiver.testnet",
+//   amount: "1.5"
+// }
+
+
+const cliente_login = document.querySelector('#cliente_login');
+console.log(cliente_login)
+document.querySelector('#cliente_near').value = cliente_login.textContent;
+
+const cliente_near = document.querySelector('#cliente_near');
+const cliente_empresa = document.querySelector('#cliente_empresa');
+
+const cliente_near_account = document.querySelector
+
+const options = {
+  sender: cliente_near,
+  networkId: "testnet",
+  keyStore: "keyStore",
+  receiver: cliente_empresa,
+  amount: "1.5"
+}
+
+document.querySelector('#btnEnviar').onclick = async () => {
+  await trySendMoney(options);
+}
+
 
 // ***********************************************
- const checkCredentials = require('./utils/check-credentials');
- const connect = require('./utils/connect');
- const inspectResponse = require('./utils/inspect-response');
- const checkCredentials = require('./utils/check-credentials');
+// const checkCredentials = require('./utils/check-credentials');
+// const connect = require('./utils/connect');
+// const inspectResponse = require('./utils/inspect-response');
+// const checkCredentials = require('./utils/check-credentials');
 
- exports.sendMoney = async function (options) {
-   await checkCredentials(options.sender, options.networkId, options.keyStore);
-   console.log(`Sending ${options.amount} NEAR to ${options.receiver} from ${options.sender}`);
-   const near = await connect(options);
-   const account = await near.account(options.sender);
-   const result = await account.sendMoney(options.receiver, utils.format.parseNearAmount(options.amount));
-   inspectResponse.prettyPrintResponse(result, options);
- };
+// exports.sendMoney = async function (options) {
+//   await checkCredentials(options.sender, options.networkId, options.keyStore);
+//   console.log(`Sending ${options.amount} NEAR to ${options.receiver} from ${options.sender}`);
+//   const near = await connect(options);
+//   const account = await near.account(options.sender);
+//   const result = await account.sendMoney(options.receiver, utils.format.parseNearAmount(options.amount));
+//   inspectResponse.prettyPrintResponse(result, options);
+// };
 
- const options = {
-   sender: "sender.testnet",
-   networkId: "testnet",
-   keyStore: "keyStore",
-   receiver: "receiver.testnet",
-   amount: "1.5"
- }
+// const options = {
+//   sender: "sender.testnet",
+//   networkId: "testnet",
+//   keyStore: "keyStore",
+//   receiver: "receiver.testnet",
+//   amount: "1.5"
+// }
 
- console.log(sendMoney(options));
+//  console.log(sendMoney(options));
 
 
 

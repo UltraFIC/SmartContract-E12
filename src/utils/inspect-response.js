@@ -5,13 +5,13 @@ const util = require('util');
 
 
 const checkForAccDoesNotExist = (error, options) => {
-    if(!String(error).includes('does not exist while viewing')) return false;
+    if (!String(error).includes('does not exist while viewing')) return false;
 
-    const suffixesToNetworks = {near:'mainnet', testnet:'testnet', betanet:'betanet'};
+    const suffixesToNetworks = { near: 'mainnet', testnet: 'testnet', betanet: 'betanet' };
 
     const currentNetwork = config.helperAccount;
     console.log(chalk`\n{bold.red Account {bold.white ${options.accountId}} is not found in {bold.white ${suffixesToNetworks[currentNetwork]}}\n}`);
-    
+
     const accSuffix = String(options.accountId).match('[^.]*$')[0];
     const accNetwork = suffixesToNetworks[accSuffix];
     if (currentNetwork != accSuffix && accNetwork) {
@@ -69,7 +69,7 @@ const getTxnIdFromError = (error) => {
     //     cost: '1000000000002265303009375000',
     //     signer_id: 'jane.betanet'
     //   }
-    
+
     if (!error || !error.context) return null;
     return error.context.transactionHash;
 };
