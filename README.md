@@ -26,6 +26,7 @@ Inicializa carpeta Git:
 git init
 Descargar Repo:
 git pull  https://github.com/UltraFIC/SmartContract-E12
+
 Abrir Repo con Visual Code con:
 code .
 
