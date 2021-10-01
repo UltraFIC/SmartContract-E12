@@ -17100,10 +17100,14 @@ require("error-polyfill");
 
 },{"./key_stores/browser-index":"../node_modules/near-api-js/lib/key_stores/browser-index.js","./common-index":"../node_modules/near-api-js/lib/common-index.js","./browser-connect":"../node_modules/near-api-js/lib/browser-connect.js","error-polyfill":"../node_modules/error-polyfill/index.js"}],"config.js":[function(require,module,exports) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 var CONTRACT_NAME = "dev-1632944990116-1489953" || 'test-project';
 =======
 var CONTRACT_NAME = "dev-1632891883889-9323740" || 'SmartContract-Consigna-Equipo';
 >>>>>>> a28139b8ea3afb592c81b3e97a222571e939ad92
+=======
+var CONTRACT_NAME = "dev-1632887167349-1814240" || 'SmartContract-Consigna-Equipo';
+>>>>>>> c2073a1eecfca772996972af7edf3caa5d16b7c0
 
 function getConfig(env) {
   switch (env) {
@@ -17144,10 +17148,14 @@ function getConfig(env) {
         networkId: 'local',
         nodeUrl: 'http://localhost:3030',
 <<<<<<< HEAD
+<<<<<<< HEAD
         keyPath: "".concat("C:\\Users\\fibarrac", "/.near/validator_key.json"),
 =======
         keyPath: "".concat("C:\\Users\\ricar", "/.near/validator_key.json"),
 >>>>>>> a28139b8ea3afb592c81b3e97a222571e939ad92
+=======
+        keyPath: "".concat("C:\\Users\\jorge", "/.near/validator_key.json"),
+>>>>>>> c2073a1eecfca772996972af7edf3caa5d16b7c0
         walletUrl: 'http://localhost:4000/wallet',
         contractName: CONTRACT_NAME
       };
@@ -17447,7 +17455,46 @@ function _fetchGreeting() {
 
 window.nearInitPromise = (0, _utils.initContract)().then(function () {
   if (window.walletConnection.isSignedIn()) signedInFlow();else signedOutFlow();
-}).catch(console.error);
+}).catch(console.error); // ***********************************************
+// const checkCredentials = require('./utils/check-credentials');
+// const connect = require('./utils/connect');
+// const inspectResponse = require('./utils/inspect-response');
+// const checkCredentials = require('./utils/check-credentials');
+// exports.sendMoney = async function (options) {
+//   await checkCredentials(options.sender, options.networkId, options.keyStore);
+//   console.log(`Sending ${options.amount} NEAR to ${options.receiver} from ${options.sender}`);
+//   const near = await connect(options);
+//   const account = await near.account(options.sender);
+//   const result = await account.sendMoney(options.receiver, utils.format.parseNearAmount(options.amount));
+//   inspectResponse.prettyPrintResponse(result, options);
+// };
+// const options = {
+//   sender: "sender.testnet",
+//   networkId: "testnet",
+//   keyStore: "keyStore",
+//   receiver: "receiver.testnet",
+//   amount: "1.5"
+// }
+// console.log(sendMoney(options));
+// // Integrate the payment gateway in line 20 to start accepting payments in NEAR.
+// // Make sure you do not add extra spaces for code validation purposes.
+// const nearAPI = require("near-api-js");
+// const { connect, utils } = nearAPI;
+// const { config } = require('./config'); // loads config settings
+// // configure accounts, network, and amount of NEAR to send
+// const sender = "sender.testnet";
+// const receiver = "receiver.testnet";
+// const networkId = "testnet";
+// const amount = utils.format.parseNearAmount("1.5");
+// async function main() {
+//   // connect to NEAR! :)
+//   const near = await connect(config);
+//   // create a NEAR account object
+//   const sender = await near.account(sender);
+//   // TODO send those tokens here
+//   const result =
+//     console.log("Transaction Results: ", result.transaction);
+// }
 },{"regenerator-runtime/runtime":"../node_modules/regenerator-runtime/runtime.js","./utils":"utils.js","./config":"config.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -17477,10 +17524,14 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
 <<<<<<< HEAD
+<<<<<<< HEAD
   var ws = new WebSocket(protocol + '://' + hostname + ':' + "58890" + '/');
 =======
   var ws = new WebSocket(protocol + '://' + hostname + ':' + "54274" + '/');
 >>>>>>> a28139b8ea3afb592c81b3e97a222571e939ad92
+=======
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57789" + '/');
+>>>>>>> c2073a1eecfca772996972af7edf3caa5d16b7c0
 
   ws.onmessage = function (event) {
     checkedAssets = {};
