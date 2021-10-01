@@ -13,3 +13,21 @@ Creación de contratos inteligentes para la validación o gestión de activos a 
 5. Check list de foto de éxito (condiciones a cumplir).
 6. Tarifas de incumplimiento por condición.
 7. Beneficios para el cliente si cumple con las condiciones, estímulos en crypto monedas para el pago de servicios.
+
+## Como ejecutar
+Clonar Repositorio desde Windows con Git Bash:
+
+La forma mas facil es crear una carpeta con nombre del Repo y abrir Git Bash con clic derecho dentro de la carpeta, opción Git Bash Here:
+
+![Screenshot](GitBAshHere.png)
+
+Dentro de la consola ejecutar los siguientes comandos:
+Inicializa carpeta Git:
+git init
+Descargar Repo:
+git pull  https://github.com/UltraFIC/SmartContract-E12
+Abrir Repo con Visual Code con:
+code .
+
+Dentro de Visual Code, abrir la terminal: 
+
